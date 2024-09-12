@@ -1,57 +1,133 @@
-body{
-    background-image: url(images/bg1.jpg);
-    background-repeat:  no-repeat;
-    background-size: cover;
+/* Custom Dark Theme Stylesheet */
+
+/* General Page Styles */
+body {
+  background-color: #f4f4f9;
+  color: #2e2e2e;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-form {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Navbar Styles */
+.navbar {
+  background-color: #343a40 !important; /* Dark gray navbar */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #f8f9fa !important; /* Light text */
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #f8f9fa !important;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  background-color: rgba(248, 249, 250, 0.1); /* Slight hover effect */
+}
+
+/* Container Styles */
+.container {
+  margin-top: 3rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.nav-link {
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.3rem;
+}
+
+.nav-link:hover {
+  background-color: #495057 !important; /* Darker hover effect */
+  color: #fff !important;
+}
+
+/* Flash Message (Alerts) Styles */
+.alert {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-left: 5px solid;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.alert-success {
+  border-color: #28a745;
+  background-color: #dff0d8;
+  color: #155724;
+}
+
+.alert-danger {
+  border-color: #dc3545;
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.alert-info {
+  border-color: #17a2b8;
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+/* Form Styling */
+input, select, textarea {
+  border-radius: 0.3rem;
+  border: 1px solid #ced4da;
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #343a40;
+  box-shadow: 0 0 5px rgba(52, 58, 64, 0.3);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: #343a40;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #343a40;
+  color: #f8f9fa;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+  .navbar-nav {
+      text-align: center;
   }
   
-  input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
+  .navbar-brand {
+      font-size: 1.4rem;
   }
-  
-  input::placeholder, textarea::placeholder {
-    color: #888;
-    font-style: italic;
+
+  .container {
+      padding: 1.5rem;
   }
-  
-  input[type="submit"], button {
-    background: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s;
+
+  footer {
+      padding: 0.75rem;
   }
-  
-  input[type="submit"]:hover, button:hover {
-    background: #0056b3;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .error {
-    color: #d9534f;
-  }
-  
-  .success {
-    color: #5bc0de;
-  }
-  
+}

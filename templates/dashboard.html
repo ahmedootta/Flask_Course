@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Hello, {{ user.username }}</h1>
+
+    {% if session['is_admin'] %}
+        <div class="alert alert-dark text-center">
+            Admin privileges detected. <a href="{{ url_for('admin_dashboard') }}" class="alert-link">Visit Admin Dashboard</a>
+        </div>
+    {% else %}
+        <div class="alert alert-light text-center">
+            You are a regular user.
+        </div>
+    {% endif %}
+
+    <h2 class="mt-5 text-center">Your Books</h2>
+    <ul class="list-group list-group-flush">
+        {% for book in books %}
+            <li class="list-group-item d-flex justify-content-between align-items-center border-top">
+                {{ book.title }}
+                <a href="{{ url_for('remove_book', book_id=book.id) }}" class="btn btn-outline-danger btn-sm">Remove</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <form action="{{ url_for('add_book') }}" method="post" class="mt-4 d-flex justify-content-center">
+        <div class="input-group">
+            <input type="text" name="title" class="form-control" placeholder="Add new book title" required>
+            <button type="submit" class="btn btn-success ml-2">Add</button>
+        </div>
+    </form>
+
+    <div class="text-center mt-4">
+        <a href="{{ url_for('logout') }}" class="btn btn-outline-danger">Logout</a>
+    </div>
+</div>
+
+{% endblock %}
